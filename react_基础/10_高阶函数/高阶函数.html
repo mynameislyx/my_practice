@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>高阶函数</title>
+</head>
+<body>
+	<div id="test"></div>
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel">
+		/* 
+			一、高阶函数：满足下列条件任何一个，均可称之为高阶函数
+							1.若A函数的返回值依然是一个函数，那么A函数就是高阶函数。
+										例如：bind
+							2.若A函数可以接收函数作为参数，那么A函数就是高阶函数。
+										例如：setTimeout、Promise、arr.map、arr.filter、arr.reduce等等
+			二、函数柯里化：
+							通过函数来返回函数实现多次接收数据，最后统一进行处理的函数编码形式
+							//add是柯里化函数
+							function add (a){
+								return (b)=>{
+									return (c)=>{
+										return a+b+c
+									}
+								}
+							}
+							const result2 = add(1)(2)(3)
+							console.log(result2);
+		*/
+		//创建组价
+		class Login extends React.Component{
+			state = {
+				username:'',
+				pwd:'',
+			}
+
+			//响应表单提交的回调
+			handleSubmit = (event)=>{
+				event.preventDefault() //阻止表单提交
+				const {username,pwd} = this.state
+				alert(`准备提交的用户名是${username}，密码是${pwd}`)
+			}
+			
+			//用户名改变的回调
+			/* saveUserName = (event)=>{
+				const {target} = event
+				this.setState({username:target.value})
+			} */
+
+			//密码改变的回调
+			/* savePwd = (event)=>{
+				const {target} = event
+				this.setState({pwd:target.value})
+			} */
+
+			saveFormData = (key)=>{
+				return (event)=>{
+					this.setState({[key]:event.target.value})
+				}
+			}
+
+			show = ()=>{
+				alert(1)
+			}
+
+			render(){
+				return(
+					<div>
+						<form action="https://www.baidu.com" onSubmit={this.handleSubmit}>
+							用户名：<input onChange={this.saveFormData('username')} placeholder="请输入用户名"/>
+							密码：<input onChange={this.saveFormData('pwd')} placeholder="请输入密码"/>
+							<button >登录</button>
+						</form>
+						<button onClick={this.show}>点我弹窗1</button>
+						<button onClick={()=>alert(1)}>点我弹窗2</button>
+					</div>
+				)
+			}
+		}
+		//渲染组件
+		ReactDOM.render(<Login/>,document.getElementById('test'))
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+    "workbench.iconTheme": "file-icons",
+    "editor.fontSize": 20,
+		"material-icon-theme.showWelcomeMessage": false,
+    "breadcrumbs.enabled": true,
+    "editor.fontWeight": "600",
+    "workbench.sideBar.location": "left",
+    "window.zoomLevel": 0,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "terminal.integrated.fontSize": 19,
+    "emmet.includeLanguages": {
+    　　"javascript": "javascriptreact",
+    },
+		"liveServer.settings.donotShowInfoMsg": true,
+    "explorer.confirmDelete": false,
+    "editor.tabSize": 2,
+    "workbench.tree.indent": 10,
+    "editor.insertSpaces": false,
+		"editor.detectIndentation": false,
+		"javascript.suggest.includeAutomaticOptionalChainCompletions": false,
+		"typescript.reportStyleChecksAsWarnings": false,
+		"typescript.suggest.includeAutomaticOptionalChainCompletions": false,
+		"javascript.updateImportsOnFileMove.enabled": "never",
+		"workbench.startupEditor": "newUntitledFile",
+		"editor.fontFamily": "Consolas, 'Courier New', monospace",
+		"scm.autoReveal": false,
+		"editor.minimap.enabled": false,
+		"emmet.triggerExpansionOnTab": true,
+		"explorer.compactFolders": false,
+		"debug.console.fontSize": 16,
+		"powermode.enabled": true, // flames 火花效果
+		"powermode.enableShake": false,
+		"powermode.presets": "fireworks",
+		"[json]": {
+			"editor.defaultFormatter": "HookyQR.beautify"
+		},
+		"workbench.colorTheme": "Luke Dark",
+		"path-intellisense.mappings": {
+
+			"@": "${workspaceRoot}/src"
+		},
+		"typescript.tsdk": "C:\\Users\\tianyu\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib",
+		"npm.fetchOnlinePackageInfo": false,
+		"typescript.updateImportsOnFileMove.enabled": "always",
+		"markdown.preview.fontSize": 18,
+		"markdown.preview.lineHeight": 1.9,
+		"markdown-preview-enhanced.mermaidTheme": "dark",
+		"editor.renameOnType": true,
+		"editor.parameterHints.enabled":true,  
+		"editor.quickSuggestions": {  
+				"other": true,  
+				"comments": true,  
+				"strings": true  
+		},
+		"extensions.autoCheckUpdates": false,
+		"diffEditor.ignoreTrimWhitespace": false
+}

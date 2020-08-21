@@ -1,0 +1,67 @@
+{
+  "emmet.triggerExpansionOnTab": true,
+  "editor.fontSize": 24,
+  "files.autoSave": "onFocusChange",
+  "sublimeTextKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.snippetSuggestions": "top",
+  "window.zoomLevel": -1,
+  "fileheader.Author": "xfzhang",
+  "fileheader.LastModifiedBy": "xfzhang",
+  "emmet.syntaxProfiles": {
+    "vue-html": "html",
+    "vue": "html"
+  },
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "git.autofetch": true,
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "workbench.activityBar.visible": true,
+  "workbench.statusBar.visible": true,
+  "editor.minimap.enabled": false,
+  "vsicons.dontShowNewVersionMessage": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "editor.mouseWheelZoom": true,
+  "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\cmd.exe",
+  "breadcrumbs.enabled": true,
+  "vetur.validation.template": false,
+  "workbench.list.openMode": "doubleClick",
+  "[javascript]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "git.enableSmartCommit": true,
+  "path-intellisense.extensionOnImport": true,
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "path-intellisense.showHiddenFiles": true,
+  "search.followSymlinks": false,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "terminal.integrated.fontSize": 20,
+  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "json.schemas": [],
+  "[yaml]": {},
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    }
+  ],
+  "workbench.iconTheme": "vscode-icons"
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>生命周期(新)</title>
+</head>
+<body>
+	<div id="test"></div>
+	<!-- 引入react核心库 -->
+	<script type="text/javascript" src="../js/react.development.js"></script>
+	<!-- 引入react-dom -->
+	<script type="text/javascript" src="../js/react-dom.development.js"></script>
+	<!-- 引入babel -->
+	<script type="text/javascript" src="../js/babel.min.js"></script>
+
+	<script type="text/babel" >
+		//定义一个求和组件
+		class Count extends React.Component{
+			
+			//构造器
+			constructor(...a){
+				console.log('---constructor---');
+				super(...a)
+				this.state = {count:1}
+			}
+
+
+			//组件已经挂载完毕
+			componentDidMount(){
+				console.log('---componentDidMount---');
+			}
+
+			//更新的“阀门”
+			shouldComponentUpdate(){
+				console.log('---shouldComponentUpdate---');
+				return true
+			}
+
+			//无论什么情况，状态都是props的值时，用这个钩子
+			/* static getDerivedStateFromProps(props){
+				console.log('---getDerivedStateFromProps---');
+				return props
+			} */
+
+			//在更新之前想留下最后一刻的props和state时我们用这个钩子
+			/* getSnapshotBeforeUpdate(preProps,preState){
+				console.log('---getSnapshotBeforeUpdate---',preProps,preState);
+				return '666666'
+			} */
+
+			//组件完成更新
+			componentDidUpdate(preProps,preState,params){
+				console.log('---componentDidUpdate---',preProps,preState,params);
+			}
+
+			//组件将要卸载
+			componentWillUnmount(){
+				console.log('---componentWillUnmount---');
+			}
+
+			//加1
+			add = ()=>{
+				const {count} = this.state
+				this.setState({count:count+1})
+			}
+
+			//卸载组件
+			death = ()=>{
+				ReactDOM.unmountComponentAtNode(document.getElementById('test'))
+			}
+
+			//强制更新
+			force = ()=>{
+				this.forceUpdate()
+			}
+
+			render(){
+				console.log('---render---');
+				return(
+					<div>
+						<h1>当前的和为：{this.state.count}</h1>
+						<button onClick={this.add}>点我+1</button>
+						<button onClick={this.death}>点击卸载Count组件</button>
+						<button onClick={this.force}>不管“阀门”是否打开，点我强制更新</button>
+						<hr/>
+						<Demo name="tom"/>
+					</div>
+				)
+			}
+		}
+		//定义一个子组件
+		class Demo extends React.Component{
+			render(){
+				return(
+					<h3>我接收到的名字是：{this.props.name}</h3>
+				)
+			}
+		}
+		//渲染组件
+		ReactDOM.render(<Count fankai="junyan"/>,document.getElementById('test'))
+		
+	</script>
+
+</body>
+</html>
